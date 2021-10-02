@@ -10,24 +10,11 @@ var uppercaseAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specialCharacters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "}", "~"];
 
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
-
-  // GIVEN I need a new, secure password
-  // WHEN I click the button to generate a password
-  // THEN I am presented with a series of prompts for password criteria
-  // WHEN prompted for password criteria
-  // THEN I select which criteria to include in the password
-  // WHEN prompted for the length of the password
-  // THEN I choose a length of at least 8 characters and no more than 128 characters
-  // WHEN prompted for character types to include in the password
-  // THEN I choose lowercase, uppercase, numeric, and/or special characters
-  // WHEN I answer each prompt
-  // THEN my input should be validated and at least one character type should be selected
 
   // Password length prompt
   var passwordlengthCriteria = parseInt(prompt("Please choose a length for your password, it must be at least 8 characters and no more than 128 characters"));
@@ -53,7 +40,7 @@ function writePassword() {
   // Numbers criteria confirmation
   var numbersCriteria = confirm("Would you prefer to have numbers in your password?")
   if (numbersCriteria === false) {
-    alert("Your new password will not contian any numbers.")
+    alert("Your new password will not contain any numbers.")
   }
   // Special Characters criteria confirmation
   var specialCharsCriteria = confirm("Would you prefer to have special characters in your new password? (e.g., !, #, $, %, etc.)")
@@ -64,22 +51,18 @@ function writePassword() {
   if (lowercaseCriteria === false || uppercaseCriteria === false || numbersCriteria === false || specialCharsCriteria === false) {
     alert("Sorry! Your new password must contain one of the criterias mentioned before your it can be generated.")
   }
-  // For loop for each criteria that will randomly select one of the values
-  for (let i = 0; i< passwordlengthCriteria.length; i++) {
-    
-    
-  }
-
-  // WHEN all prompts are answered
-  // THEN a password is generated that matches the selected criteria
-  // WHEN the password is generated
-  // THEN the password is either displayed in an alert or written to the page
-  // Not using started code password variable
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
-
-  // passwordText.value = password;
+  // For loop for each criteria that will randomly select one of the values in each array
+  for (let i = 0; i < passwordlengthCriteria; i++) {
+    if (lowercaseCriteria === true) {
+      var random = Math.floor(Math.random() * lowercaseAlphabet.length)
+      newPassword.push(lowercaseAlphabet[random])
+    }
+    console.log(newPassword)
+  };
+  // Generating new password and displaying in HTML
 
 }
+
+
 
 
