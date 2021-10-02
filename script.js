@@ -5,10 +5,11 @@ var generateBtn = document.querySelector("#generate");
 var password = [];
 
 // Create variables for the password criteria:
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-var specialCharacters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "}", "~"];
 var lowercaseAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercaseAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var specialCharacters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "}", "~"];
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -37,36 +38,29 @@ function writePassword() {
   // Lowercase criteria confirmation
   var lowercaseCriteria = confirm("Would you prefer lowercase letters in your new password?");
   if (lowercaseCriteria === false) {
-    alert("There will be no lowercase letters in your new password.")
+    alert("Your new password will not contain any lowercase letters.")
   }
-  // UppercaseCriteria confirmation
+  // Uppercase criteria confirmation
   var uppercaseCriteria = confirm("Would you prefer uppercase letters in your new password?");
   if (uppercaseCriteria === false) {
-    alert("There will be no uppercase letters in your new password.")
+    alert("Your new password will not contain any uppercase letters.")
   }
+  // Numbers criteria confirmation
+  var numbersCriteria = confirm("Would you prefer to have numbers in your password?")
+  if (numbersCriteria === false) {
+    alert("Your new password will not contian any numbers.")
+  }
+  // Special Characters criteria confirmation
+  var specialCharsCriteria = confirm("Would you prefer to have special characters in your new password? (e.g., !, #, $, %, etc.")
+  if (specialCharsCriteria === false) {
+
+  }
+
+
   // WHEN all prompts are answered
   // THEN a password is generated that matches the selected criteria
   // WHEN the password is generated
   // THEN the password is either displayed in an alert or written to the page
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // Not using started code password variable
   // var password = generatePassword();
   // var passwordText = document.querySelector("#password");
