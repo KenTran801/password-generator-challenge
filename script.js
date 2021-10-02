@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 // Empty/blank array for new password
-var password = [];
+var newPassword = [];
 
 // Create variables for the password criteria:
 var lowercaseAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -35,11 +35,11 @@ function writePassword() {
     passwordlengthCriteria = alert("That number does not meet the length criteria, please select a number in between 8 and 128.");
     return
   }
-  console.log(passwordlengthCriteria)
-  if (passwordlengthCriteria != Number) {
-    passwordlengthCriteria = alert("A valid number must be entered, please select a number in between 8 and 128.")
-    return
-  } 
+  // console.log(passwordlengthCriteria)
+  // if (passwordlengthCriteria != Number) {
+  //   passwordlengthCriteria = alert("A valid number must be entered, please select a number in between 8 and 128.")
+  //   return
+  // } 
   // Lowercase criteria confirmation
   var lowercaseCriteria = confirm("Would you prefer lowercase letters in your new password?");
   if (lowercaseCriteria === false) {
@@ -64,7 +64,11 @@ function writePassword() {
   if (lowercaseCriteria === false || uppercaseCriteria === false || numbersCriteria === false || specialCharsCriteria === false) {
     alert("Sorry! Your new password must contain one of the criterias mentioned before your it can be generated.")
   }
-
+  // For loop for each criteria that will randomly select one of the values
+  for (let i = 0; i< passwordlengthCriteria.length; i++) {
+    
+    
+  }
 
   // WHEN all prompts are answered
   // THEN a password is generated that matches the selected criteria
