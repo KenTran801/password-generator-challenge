@@ -52,10 +52,25 @@ function writePassword() {
     alert("Sorry! Your new password must contain one of the criterias mentioned before your it can be generated.")
   }
   // For loop for each criteria that will randomly select one of the values in each array
-  for (let i = 0; i < passwordlengthCriteria; i++) {
+  for (let i = 0; i < passwordlengthCriteria.length; i++) {
     if (lowercaseCriteria === true) {
       var random = Math.floor(Math.random() * lowercaseAlphabet.length)
       newPassword.push(lowercaseAlphabet[random])
+    }
+    console.log(newPassword)
+    if (uppercaseCriteria === true) {
+      var random = Math.floor(Math.random() * uppercaseAlphabet.length)
+      newPassword.push(uppercaseAlphabet[random])
+    }
+    console.log(newPassword)
+    if (numbersCriteria === true) {
+      var random = Math.floor(Math.random() * numbers.length)
+      newPassword.push(numbers[random])
+    }
+    console.log(newPassword)
+    if (specialCharsCriteria === true) {
+      var random = Math.floor(Math.random() * specialCharacters.length)
+      newPassword.push(specialCharacters[random])
     }
     console.log(newPassword)
   };
