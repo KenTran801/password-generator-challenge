@@ -30,11 +30,16 @@ function writePassword() {
   // THEN my input should be validated and at least one character type should be selected
 
   // Password length prompt
-  var passwordlengthCriteria = prompt("Pleae choose a length for your password, it must be at least 8 characters and no more than 128 characters");
+  var passwordlengthCriteria = parseInt(prompt("Please choose a length for your password, it must be at least 8 characters and no more than 128 characters"));
   if (passwordlengthCriteria > 128 || passwordlengthCriteria < 8) {
     passwordlengthCriteria = alert("That number does not meet the length criteria, please select a number in between 8 and 128.");
     return
   }
+  console.log(passwordlengthCriteria)
+  if (passwordlengthCriteria != Number) {
+    passwordlengthCriteria = alert("A valid number must be entered, please select a number in between 8 and 128.")
+    return
+  } 
   // Lowercase criteria confirmation
   var lowercaseCriteria = confirm("Would you prefer lowercase letters in your new password?");
   if (lowercaseCriteria === false) {
@@ -51,9 +56,13 @@ function writePassword() {
     alert("Your new password will not contian any numbers.")
   }
   // Special Characters criteria confirmation
-  var specialCharsCriteria = confirm("Would you prefer to have special characters in your new password? (e.g., !, #, $, %, etc.")
+  var specialCharsCriteria = confirm("Would you prefer to have special characters in your new password? (e.g., !, #, $, %, etc.)")
   if (specialCharsCriteria === false) {
-
+    alert("Your new password will not contain any special characters.")
+  }
+  // Adding additional question is all criteria === false
+  if (lowercaseCriteria === false || uppercaseCriteria === false || numbersCriteria === false || specialCharsCriteria === false) {
+    alert("Sorry! Your new password must contain one of the criterias mentioned before your it can be generated.")
   }
 
 
