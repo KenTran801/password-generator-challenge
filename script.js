@@ -75,7 +75,10 @@ function writePassword() {
     console.log(newPassword)
   };
   // Generating new password and displaying in HTML
-
+  console.log(newPassword)
+  newPassword = newPassword.slice(0, passwordlengthCriteria)
+  newPassword = newPassword.join("")
+  document.querySelector("#password").innerHTML = newPassword
 }
 
 
