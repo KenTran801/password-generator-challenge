@@ -52,7 +52,7 @@ function writePassword() {
     alert("Sorry! Your new password must contain one of the criterias mentioned before your it can be generated.")
   }
   // For loop for each criteria that will randomly select one of the values in each array
-  for (let i = 0; i < passwordlengthCriteria.length; i++) {
+  for (let i = 0; i < passwordlengthCriteria; i++) {
     if (lowercaseCriteria === true) {
       var random = Math.floor(Math.random() * lowercaseAlphabet.length)
       newPassword.push(lowercaseAlphabet[random])
