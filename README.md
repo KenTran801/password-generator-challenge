@@ -4,7 +4,7 @@
 
 Objective: Create an application using Javascript to generate a random password that meets certain criteria.
 
-## Acceptance Criteria:
+## Acceptance Criteria
 1. Generated password length is at least 8 characters and no more than 128 characters
 2. Generated password will contain at least one of the following criteria: lowercase, uppercase, numeric, and/or special characters
 3. User is asked to choose at least one of the criteria: lowercase, uppercase, numeric, and/or special characters
