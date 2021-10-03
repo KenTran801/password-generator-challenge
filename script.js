@@ -22,11 +22,6 @@ function writePassword() {
     passwordlengthCriteria = alert("That number does not meet the length criteria, please select a number in between 8 and 128.");
     return
   }
-  // console.log(passwordlengthCriteria)
-  // if (passwordlengthCriteria != Number) {
-  //   passwordlengthCriteria = alert("A valid number must be entered, please select a number in between 8 and 128.")
-  //   return
-  // } 
   // Lowercase criteria confirmation
   var lowercaseCriteria = confirm("Would you prefer lowercase letters in your new password?");
   if (lowercaseCriteria === false) {
@@ -48,7 +43,7 @@ function writePassword() {
     alert("Your new password will not contain any special characters.")
   }
   // Adding additional question is all criteria === false
-  if (lowercaseCriteria === false || uppercaseCriteria === false || numbersCriteria === false || specialCharsCriteria === false) {
+  if (lowercaseCriteria === false && uppercaseCriteria === false && numbersCriteria === false && specialCharsCriteria === false) {
     alert("Sorry! Your new password must contain one of the criterias mentioned before your it can be generated.")
   }
   // For loop for each criteria that will randomly select one of the values in each array
@@ -57,22 +52,18 @@ function writePassword() {
       var random = Math.floor(Math.random() * lowercaseAlphabet.length)
       newPassword.push(lowercaseAlphabet[random])
     }
-    console.log(newPassword)
     if (uppercaseCriteria === true) {
       var random = Math.floor(Math.random() * uppercaseAlphabet.length)
       newPassword.push(uppercaseAlphabet[random])
     }
-    console.log(newPassword)
     if (numbersCriteria === true) {
       var random = Math.floor(Math.random() * numbers.length)
       newPassword.push(numbers[random])
     }
-    console.log(newPassword)
     if (specialCharsCriteria === true) {
       var random = Math.floor(Math.random() * specialCharacters.length)
       newPassword.push(specialCharacters[random])
     }
-    console.log(newPassword)
   };
   // Generating new password and displaying in HTML
   console.log(newPassword)
